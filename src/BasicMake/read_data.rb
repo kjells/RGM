@@ -17,7 +17,7 @@ require 'yaml'
 
 module ReadData
 
-  def read_YAML(dataname)
+  def ReadData.read_YAML(dataname)
 
     parse = begin
       YAML.load(File.open(dataname))
@@ -27,7 +27,7 @@ module ReadData
 
   end
 
-  def write_YAML(dataname, content)
+  def ReadData.write_YAML(dataname, content)
     File.open(dataname, "w") { |f| f.write(content.to_yaml) }
   end
 
