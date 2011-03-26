@@ -1,0 +1,9 @@
+RGM, the RubyGoMake, is a program which is a small make-like buildprogram with functions to compile, link and more.
+---License---
+The license is the GPL Version 3.
+---The Make File--
+The makefile is a yaml-file with commands to control the make-program. The commands are hashes in the style command => parameter
+The commands are the following:
+-compile: compiles the file
+-link: links the file
+-move: moves the file with the parameter-hash from and to.
