@@ -83,9 +83,9 @@ class SrcFile
   end
 end
 
-test_file = SrcFile.new("test")
-SrcFile.set_compiler("go")
-SrcFile.set_arch("6")
-test_file.list_vars()
-test_file.compile()
-test_file.link()
+#test_file = SrcFile.new("test")
+#SrcFile.set_compiler("go")
+#SrcFile.set_arch("6")
+#test_file.list_vars()
+#test_file.compile()
+#test_file.link()
