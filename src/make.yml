@@ -1,0 +1,20 @@
+## Vorschlag 1
+---
+compile:
+  - test
+  - foo
+  - bar
+link:
+  - foo
+  - bar
+
+## Vorschlag 2
+---
+task1:
+  compile: test
+  link: test
+  move:
+    from: src
+    to: bin
+  test: test
+
