@@ -83,6 +83,7 @@ class SrcFile
   end
 end
 
+#Just for testing
 #test_file = SrcFile.new("test")
 #SrcFile.set_compiler("go")
 #SrcFile.set_arch("6")

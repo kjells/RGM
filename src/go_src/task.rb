@@ -38,8 +38,8 @@ class Task
 
 end
 
-SrcFile.set_arch("6")
-SrcFile.set_compiler("go")
-task = Task.new("build", "test")
-task.init_task()
-task.do_task()
+#SrcFile.set_arch("6")
+#SrcFile.set_compiler("go")
+#task = Task.new("build", "test")
+#task.init_task()
+#task.do_task()
