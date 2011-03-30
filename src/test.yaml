@@ -1,9 +1,0 @@
---- 
-- compile: foo
-  link: foo
-- compile: bar
-  link: bar
-  move: 
-    from: src
-    to: test
-- test: bar
