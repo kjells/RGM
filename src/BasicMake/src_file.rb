@@ -20,6 +20,12 @@ class SrcFile
   @@tmp_dir = "tmp"
   @@trenner = "-" * 20
 
+  #Compiler = gccgo OR 8g&8l
+  @@compiler = "go"
+  @@GCCGO = "gccgo"
+  @@GO_COMPILE = "8g"
+  @@GO_LINK = "8l"
+
   def initialize(filename)
     @filename = filename
     @src_name = @filename + ".go"
@@ -28,17 +34,30 @@ class SrcFile
   end
 
   def compile
-    befehl = "8g -I #{@@tmp_dir} -o #{@@tmp_dir}/#{@link_name} #{@@src_dir}/#{@src_name}"
+    if @@compiler == "gccgo"
+      puts "Not yet implemented!"
+    else
+      befehl = "8g -I #{@@tmp_dir} -o #{@@tmp_dir}/#{@link_name} #{@@src_dir}/#{@src_name}"
+    end
+
     puts befehl
     system(befehl)
     puts @@trenner
   end
 
   def link
-    befehl = "8l -o #{@@bin_dir}/#{@output_name} #{@@tmp_dir}/#{@link_name}"
+    if @@compiler == "gccgo"
+      puts "Not yet implemented!"
+    else
+      befehl = "8l -o #{@@bin_dir}/#{@output_name} #{@@tmp_dir}/#{@link_name}"
+    end
     puts befehl
     system(befehl)
     puts @@trenner
+  end
+
+  def self.set_compiler(name)
+    @@compiler = name
   end
 
   def list_vars

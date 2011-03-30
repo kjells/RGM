@@ -13,6 +13,7 @@
 #
 #You should have received a copy of the GNU General Public License
 #along with this program.  If not, see <http://www.gnu.org/licenses/>.
+require 'BasicMake/src_file'
 class Task
   def initialize(type, param)
     @type = type
@@ -20,12 +21,23 @@ class Task
   end
 
   # init SrcFile or whatever
-  def initTask()
+  def init_task()
+    if @type == "build"
+      @file = SrcFile.new(@param)
+    end
   end
 
   # Compile, link, whatever
-  def doTask()
+  def do_task()
+    if @type == "build"
+      @file.compile()
+      @file.link()
+    end
   end
 
 
 end
+
+task = Task.new("build", "test")
+task.init_task()
+task.do_task()
